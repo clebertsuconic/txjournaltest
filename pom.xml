@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jboss.narayana</groupId>
+    <artifactId>case02681833</artifactId>
+    <version>5.10.5.Final</version>
+
+    <name>Narayana: ArjunaJTA jta performance tests</name>
+    <description>Narayana: ArjunaJTA jta performance tests</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
+
+        <narayana.version>${project.version}</narayana.version>
+
+        <version.org.apache.activemq>2.9.0</version.org.apache.activemq>
+        <version.org.jboss.logging.jboss-logging>3.2.1.Final</version.org.jboss.logging.jboss-logging>
+        <version.org.jboss.spec.javax.transaction>1.0.0.Final</version.org.jboss.spec.javax.transaction>
+        <version.org.jboss.jboss-transaction-spi>7.5.1.Final</version.org.jboss.jboss-transaction-spi>
+        <version.junit>4.11</version.junit>
+
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+            <version>${version.org.jboss.spec.javax.transaction}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jboss-transaction-spi</artifactId>
+            <version>${version.org.jboss.jboss-transaction-spi}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.logging</groupId>
+                    <artifactId>jboss-logging-spi</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.jboss.narayana</groupId>-->
+        <!--            <artifactId>common</artifactId>-->
+        <!--            <version>${narayana.version}</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jboss.narayana.arjunacore</groupId>-->
+        <!--            <artifactId>arjuna</artifactId>-->
+        <!--            <version>${narayana.version}</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.jboss.narayana.jta</groupId>
+            <artifactId>jta</artifactId>
+            <version>${narayana.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-journal</artifactId>
+            <version>${version.org.apache.activemq}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>${version.org.jboss.logging.jboss-logging}</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+</project>
