@@ -1,0 +1,4 @@
+HornetQJournalStore
+.idea
+*.iml
+target
